@@ -1,0 +1,26 @@
+﻿@model LoginViewModel;
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+<form asp-controller="Account" asp-action="Login" method="POST">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div>
+        <label asp-for="Email"></label>
+        <div class="col-sm-10">
+            <input asp-for="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <div class="col-sm-10">
+            <input asp-for="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div>
+    <button type="submit">Login</button>
+</form>
